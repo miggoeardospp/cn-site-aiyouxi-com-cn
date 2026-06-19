@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://miggoeardospp.github.io/cn-site-aiyouxi-com-cn/sitemap.xml
