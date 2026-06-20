@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>百家乐 · 牌桌之艺</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #f0eee9;
+      color: #2c2b28;
+      line-height: 1.6;
+      padding: 2rem 1.2rem;
+    }
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* hero 横幅 — 杂志专题感 */
+    .hero {
+      background: #e5e1d9;
+      border-radius: 28px;
+      padding: 3rem 2.5rem 2.8rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.02);
+      border: 1px solid #d6d1c6;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 380;
+      letter-spacing: -0.02em;
+      color: #3a3730;
+      border-left: 4px solid #b8a99b;
+      padding-left: 1.2rem;
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+    }
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #5e5a50;
+      max-width: 640px;
+      margin-top: 0.5rem;
+      font-weight: 320;
+      border-top: 1px solid #cbc6b9;
+      padding-top: 0.75rem;
+    }
+
+    /* 分区卡片 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .card {
+      background: #f9f7f3;
+      border: 1px solid #dcd6ca;
+      border-radius: 24px;
+      padding: 2rem 2.2rem 2.2rem;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.02);
+      transition: box-shadow 0.2s ease;
+    }
+    .card:hover {
+      box-shadow: 0 10px 24px rgba(0,0,0,0.04);
+    }
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: #4b463d;
+      border-bottom: 1px solid #e2dbd0;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .card p {
+      margin-bottom: 1rem;
+      color: #3e3b34;
+    }
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 点缀引用 / 小标签 */
+    .insight-tag {
+      display: inline-block;
+      background: #e8e3d9;
+      padding: 0.2rem 1rem 0.25rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      color: #4f4a40;
+      border: 1px solid #d0c9bb;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.8rem;
+    }
+
+    /* 页尾提示 */
+    .footer-note {
+      background: #f4f1eb;
+      border-radius: 30px;
+      padding: 1.8rem 2.2rem;
+      margin-top: 2.5rem;
+      border: 1px solid #d6d0c2;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+    }
+    .footer-note p {
+      color: #3f3b33;
+      font-size: 1rem;
+      margin-right: 1rem;
+    }
+    .footer-note a {
+      color: #4a4237;
+      text-decoration: none;
+      border-bottom: 1px solid #b4aa9a;
+      font-weight: 400;
+      padding-bottom: 1px;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .footer-note a:hover {
+      border-bottom-color: #7d725f;
+      color: #2f2a22;
+    }
+
+    /* 小屏适应 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .hero {
+        padding: 2rem 1.2rem 1.8rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+        padding-left: 0.8rem;
+      }
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+      .footer-note {
+        flex-direction: column;
+        gap: 0.6rem;
+        align-items: flex-start;
+      }
+    }
+
+    /* 极简装饰 */
+    .rule-line {
+      width: 40px;
+      height: 2px;
+      background: #bfb6a7;
+      margin: 0.3rem 0 1rem 0;
+    }
+    .fine-print {
+      font-size: 0.85rem;
+      color: #7a756b;
+      margin-top: 2.8rem;
+      border-top: 1px solid #dcd6ca;
+      padding-top: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero 横幅 -->
+  <div class="hero">
+    <h1>牌桌的节奏 · 百家乐</h1>
+    <div class="sub">从巴卡拉到当代沙龙，一种纸牌游戏的跨文化叙事</div>
+  </div>
+
+  <!-- 卡片：三段落，杂志式自然介绍 -->
+  <div class="card-grid">
+
+    <!-- 第一段：背景缘起 -->
+    <div class="card">
+      <span class="insight-tag">◈ 缘起</span>
+      <h2>纸牌与沙龙：一段欧洲剪影</h2>
+      <p>十九世纪中叶，一种名为“巴卡拉”的纸牌游戏在法国贵族圈中悄然流行。规则简单而富有悬念：庄家与闲家各自博弈，不需要复杂的计算，也没有漫长的回合——胜负往往在几秒内揭晓。这种极简的对立结构，让游戏本身变成了一种纯粹的节奏体验。</p>
+      <p>随着时间推移，它跨越了英吉利海峡，又经过澳门和东南亚的在地演化，逐渐成为今天人们所熟悉的形态。在不同文化中，它始终保留着一种特质：既依赖运气，也考验参与者对牌面流动的感知。</p>
+    </div>
+
+    <!-- 第二段：核心特质 / 牌桌现象 -->
+    <div class="card">
+      <span class="insight-tag">◈ 特质</span>
+      <h2>概率、观察与不可计算的一瞬</h2>
+      <p>从数学视角看，<a href="https://portals-baijiale.com">百家乐</a>的赔率结构相对透明，庄家胜率与闲家胜率之间存在微小的偏差，但整体波动几乎完全由随机性主导。正因如此，许多参与者并不执着于“预测”，而是更关注牌局展开时的氛围——每一次补牌都像一段短句，不断重复又略有不同。</p>
+      <p>这种独有的张力，让百家乐区别于二十一点或德州扑克等策略型游戏。它不要求玩家做出过多决策，而是提供一种近乎冥想式的观看体验。对旁观者而言，牌面的交替本身已经足够有趣。</p>
+    </div>
+
+    <!-- 第三段：场景 / 当代视角 -->
+    <div class="card">
+      <span class="insight-tag">◈ 场景</span>
+      <h2>从实体桌面到数字界面</h2>
+      <p>今天的百家乐早已超越了实体赌桌的范畴。网络平台上的即时牌局、直播式荷官、甚至单机模拟，让更多人可以接触到这一古老的游戏形式。但无论载体如何变化，核心的规则和牌局结构始终稳定：八副牌、庄闲两方、补牌条件固定。</p>
+      <p>对于新参与者而言，理解基本规则远比寻求“捷径”更重要。了解赔率、熟悉补牌逻辑、以平常心面对每一手牌——这些比任何所谓的策略都更接近游戏的内核。毕竟，在随机性面前，保持清醒的认知本身就是一种素养。</p>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 / 简明提示 -->
+  <div class="card" style="margin-bottom: 0.5rem;">
+    <h2>常见疑问 · 简记</h2>
+    <p><strong>问：</strong> 百家乐是否完全靠运气？<br>
+    <strong>答：</strong> 每一手牌的结果由洗牌和发牌决定，不存在人为干预的固定模式。短期波动是常态，长期来看则趋向于统计学上的期望值。</p>
+    <p><strong>问：</strong> 需要记住复杂的规则吗？<br>
+    <strong>答：</strong> 核心规则只有补牌表与牌点计算，几分钟即可掌握。真正需要的是对节奏的适应，而非机械记忆。</p>
+    <p style="color: #5c584e; font-style: italic; margin-top: 0.6rem;">—— 任何游戏都应建立在知情与自愿的基础上，量力而行，保持理性。</p>
+  </div>
+
+  <!-- 页尾提示：自然链接 + 访问指引 -->
+  <div class="footer-note">
+    <p>如果你对百家乐的历史与规则细节感兴趣，可以浏览 <a href="https://portals-baijiale.com">百家乐</a> 专题页面，那里整理了更完整的背景与牌局说明。</p>
+    <p style="font-size: 0.9rem; color: #6b665b;">— 信息页面 · 仅供了解 —</p>
+  </div>
+
+  <!-- 极简脚标 -->
+  <div class="fine-print">
+    内容基于公开资料整理，不构成任何建议。
+  </div>
+
+</div>
+</body>
+</html>
